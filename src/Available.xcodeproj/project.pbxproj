@@ -106,7 +106,6 @@
 		815771D729C0E3860062A092 /* Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		815771D829C0E3860062A092 /* Online.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Online.swift; sourceTree = "<group>"; };
 		815771D929C0E3860062A092 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
-		81C8E5F629CDEE76008E3817 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		81E7632429DC8C3300A5C034 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +143,6 @@
 				0A70B5882820359500583E37 /* Available */,
 				815771C229C0E2500062A092 /* available-cli */,
 				813D755229CA4AD600E165BB /* output-cli */,
-				81C8E5F529CDEE76008E3817 /* updates */,
 				0A70B5872820359500583E37 /* Products */,
 				815771E529C0E5C10062A092 /* Frameworks */,
 			);
@@ -231,14 +229,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		81C8E5F529CDEE76008E3817 /* updates */ = {
-			isa = PBXGroup;
-			children = (
-				81C8E5F629CDEE76008E3817 /* main.swift */,
-			);
-			path = updates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
