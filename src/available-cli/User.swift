@@ -34,7 +34,9 @@ extension MacUser {
     static func fromConsole() throws -> MacUser? {
         let consoleUser = SCDynamicStoreCopyConsoleUser(nil, nil, nil)
         if let username: String = consoleUser! as String? {
-            return try LocalUser(username: username)
+            if(UserValidator.isValid(username: username)) {
+                return try LocalUser(username: username)
+            }
         }
         
         return nil
