@@ -50,23 +50,23 @@ public class Output {
     }
     
     public func error(_ message: String, level: Int = 1) {
-        self.output(message: message, context: .error, level: level)
+        self.output(message: message, context: .error, level: level, terminator: "")
     }
 
     public func info(_ message: String, level: Int = 1) {
-        self.output(message: message, context: .info, level: level)
+        self.output(message: message, context: .info, level: level, terminator: "")
     }
 
     public func msg(_ message: String, level: Int = 1) {
-        self.output(message: message, context: .message, level: level)
+        self.output(message: message, context: .message, level: level, terminator: "")
     }
 
     public func normal(_ message: String, level: Int = 1) {
-        self.output(message: message, context: .normal, level: level)
+        self.output(message: message, context: .normal, level: level, terminator: "")
     }
 
     public func success(_ message: String, level: Int = 1) {
-        self.output(message: message, context: .success, level: level)
+        self.output(message: message, context: .success, level: level, terminator: "")
     }
 
     public func errorln(_ message: String, level: Int = 1) {
