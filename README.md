@@ -4,6 +4,40 @@ Available includes CLI tools designed to ease writing scripts for administration
 
 In most cases, the included tools would be used in scripts run via an MDM such as Jamf Pro.
 
+## Important Notes
+
+### Caveats
+
+While I feel confident that `available-cli` works well in most cases, please be aware that many of the tests depend on 3rd party applications and OS tools, which break suddenly if the vendor makes changes to their app, or Apple makes changes to the OS.
+
+In particular, the detection of various online meetings is fragile, relying on specific file locations and states.
+
+The detection of focus modes may not detect all focus modes set via smart triggers, especially those set on a different iCloud device.
+
+Please test and determine the best way to use the tool in your environment.
+
+### Swift Code Quality
+
+Some of the methodology used within these tools may not match the 'Swifty' way of obtaining the information, for two primary reasons:
+
+* Swift is not, by any means, my primary programming language.
+* While some of the functionality may be possible in Swift, some of those APIs are not avaiable to CLI applications.
+
+As such, I am open to suggestions for improving the tests and reducing the number of bash callouts within the code. Open an issue or a PR!
+
+### Credits
+
+Many of the ideas and portions of code in this tool came from a variety of sources on the web and within the MacAdmins community. I have attempted to provide full credit throughout the code base where applicable, even in cases where the original code had to be rewritten to work in Swift.
+
+Of particular note are the individuals below. Without their contributions to Open Source and the MacAdmins community this tool would not be possible, and many users would still be voicing their ire to me:
+
+* Erik Gomez
+* Armin Briegel
+* Bart Reardon
+* Drew Kerr
+* brunerd
+* Steven J. Selcuk
+
 ## User Availability CLI Tool
 
 Often one may need to interact with a user when running a management script. As many management tasks are critical for the security and stability of macOS, these dialogs can be pretty important.  Of course, it's *also* possible that the user is already doing something equally important.  Or slightly less important, but still not worth interrupting such as that pesky sales presentation on stage in front of 50,000 convention attendees.
@@ -26,7 +60,7 @@ That's where `available-cli` comes in.  This tool can check several different it
 
 Additionally, the *Work* focus can be excluded from the `--focus` check with the additional flag `--nowork`.  
 
-### Usage
+### Usage Example
 
 Depending on whether you would like some feedback, or simply a boolean result, usage may vary. Output can take three forms:
 
@@ -43,6 +77,8 @@ Here is an example of Bash usage, with a standard installation:
       echo "User Unavaiable: '${state}'.  Exiting..."
       exit 1
     fi
+
+Note that the script must be run via sudo or root for the best results.  This is because many of the checks are checking the contents of files within the current console user's directory.
 
 ## Script Output CLI Tool
 
@@ -127,8 +163,3 @@ If used with `OUTPUT_VERBOSE=2` before the snippet above, and assuming _somebina
 > ERROR MESSAGE FROM somebinary DISPLAYED HERE
 
 If used without setting `OUTPUT_VERBOSE` only the notify and badge would be shown.
-
-
-
-
-
