@@ -36,9 +36,9 @@ class UserStatus: CustomStringConvertible {
         if(isVerbose) {
             print(self.label.style(ANSIAttr.cyan).padding(toLength: 76, withPad: ".", startingAt: 0), terminator: " ")
             if(self.status) {
-                print(self.value.style(.red))
+                print("[\(self.value.style(.red))]")
             } else {
-                print(self.value.style(.green))
+                print("[\(self.value.style(.green))]")
             }
         } else {
             if(!isQuiet && self.status) {
