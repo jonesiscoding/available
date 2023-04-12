@@ -46,8 +46,8 @@ struct MeteredNetwork {
     }
 
     init() {
-        let testSite = "https://httpstat.us/200"
-        let result = Commands.Bash.run("/usr/bin/nscurl --no-constrained --no-expensive -o /dev/null \"\(testSite)\"")
+        let testSite = "http://httpstat.us/200"
+        let result = Commands.Bash.run("/usr/bin/nscurl --max-time 1 --insecure --no-constrained --no-expensive -o /dev/null \"\(testSite)\"")
         
         if(result.output.contains("constrained") || result.errorOutput.contains("constrained")) {
             self.isConstrained = true
