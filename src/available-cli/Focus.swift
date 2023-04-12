@@ -249,7 +249,7 @@ class FocusMonterey: FocusBase {
             let assertFile = URL(fileURLWithPath: "\(user.userHome.path)/Library/DoNotDisturb/DB/Assertions.json")
             let modeConfigFile = URL(fileURLWithPath: "\(user.userHome.path)/Library/DoNotDisturb/DB/ModeConfigurations.json")
             let jsonDecoder = JSONDecoder()
-            var manualStart: Int = 0
+            var smartStart: Int = 0
             
             if fm.fileExists(atPath: assertFile.path) && fm.fileExists(atPath: modeConfigFile.path) {
                 let calendar = Calendar.current
@@ -264,7 +264,7 @@ class FocusMonterey: FocusBase {
                                 // seems like a smart trigger, let's get the time for comparison.
                                 let ms = (record.assertionStartDateTimestamp + 978307200) * 1000
                                 let dt = calendar.dateComponents([.hour, .minute], from: Date(milliseconds: ms))
-                                manualStart = (dt.hour ?? 0) * 60 + (dt.minute ?? 0)
+                                smartStart = (dt.hour ?? 0) * 60 + (dt.minute ?? 0)
                             } else {
                                 return focus
                             }
@@ -281,18 +281,14 @@ class FocusMonterey: FocusBase {
                                 let end = triggers.timePeriodEndTimeHour * 60 + triggers.timePeriodEndTimeMinute
                                 if (start < end) {
                                     if (now >= start && now < end) {
-                                        if(manualStart > 0 && manualStart < start) {
-                                            if(manualStart > start) {
-                                                focus = config.mode.name
-                                            }
-                                         } else {
-                                             focus = config.mode.name
-                                         }
+                                        if(smartStart == 0 || smartStart < start) {
+                                            focus = config.mode.name
+                                        }
                                     }
                                 } else if (start > end) {
                                     if (now >= start || now < end) {
-                                        if(manualStart > 0) {
-                                            if(manualStart >= start || manualStart < end) {
+                                        if(smartStart > 0) {
+                                            if(smartStart >= start || smartStart < end) {
                                                 focus = config.mode.name
                                             }
                                         } else {
