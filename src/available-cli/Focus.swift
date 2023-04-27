@@ -198,7 +198,7 @@ class FocusCatalina: FocusBase {
 /// Reads the DoNotDisturb status in macOS Big Sur.
 ///
 /// - Authors:  Originally written by Bart Reardon (https://github.com/bartreardon/infocus/blob/main/infocus/checkDNDcli.swift)
-///            Modified for error handling by Aaron Jones <am@jonesiscoding>
+///            Modified for error handling by Aaron Jones <am@jonesiscoding.com>
 /// - Parameter user: The username to utilize.  If not given, defaults to the console user.
 class FocusBigSur: FocusBase {
     /// Evaluates the DoNotDisturb status
