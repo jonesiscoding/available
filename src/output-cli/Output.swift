@@ -4,9 +4,9 @@
 
 import Foundation
 import Commands
+import ArgumentParser
 
 public enum OutputContext: String, CaseIterable {
-    case notify = "notify"
     case success = "success"
     case error = "error"
     case message = "msg"

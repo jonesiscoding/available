@@ -17,7 +17,7 @@
 		8114EE4429C0E7950099578E /* Commands in Frameworks */ = {isa = PBXBuildFile; productRef = 8114EE4329C0E7950099578E /* Commands */; };
 		8114EE4629C0E79A0099578E /* Commands in Frameworks */ = {isa = PBXBuildFile; productRef = 8114EE4529C0E79A0099578E /* Commands */; };
 		8114EE4829C107860099578E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114EE4729C107860099578E /* Status.swift */; };
-		813D755429CA4AD600E165BB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D755329CA4AD600E165BB /* main.swift */; };
+		813D755429CA4AD600E165BB /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D755329CA4AD600E165BB /* Stub.swift */; };
 		813D755929CA4AE700E165BB /* Commands in Frameworks */ = {isa = PBXBuildFile; productRef = 813D755829CA4AE700E165BB /* Commands */; };
 		813D755C29CA4B0B00E165BB /* output-cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = 813D755129CA4AD600E165BB /* output-cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		813D755E29CA4B4B00E165BB /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D755D29CA4B4B00E165BB /* Output.swift */; };
@@ -30,6 +30,7 @@
 		815771DE29C0E3860062A092 /* Online.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771D829C0E3860062A092 /* Online.swift */; };
 		815771DF29C0E3860062A092 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771D929C0E3860062A092 /* System.swift */; };
 		815771E329C0E4310062A092 /* available-cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = 815771C129C0E2500062A092 /* available-cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		816BD9D329F9738A00D042B6 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 816BD9D229F9738A00D042B6 /* ArgumentParser */; };
 		81E7632529DC8C3300A5C034 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7632429DC8C3300A5C034 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +96,7 @@
 		0ACCFC7C28204314007225BF /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		8114EE4729C107860099578E /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		813D755129CA4AD600E165BB /* output-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "output-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
-		813D755329CA4AD600E165BB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		813D755329CA4AD600E165BB /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 		813D755D29CA4B4B00E165BB /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		813D756229CA4CC000E165BB /* ANSIAttr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANSIAttr.swift; sourceTree = "<group>"; };
 		815771C129C0E2500062A092 /* available-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "available-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +107,7 @@
 		815771D729C0E3860062A092 /* Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
 		815771D829C0E3860062A092 /* Online.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Online.swift; sourceTree = "<group>"; };
 		815771D929C0E3860062A092 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		816BD9D529F97C7B00D042B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E7632429DC8C3300A5C034 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816BD9D329F9738A00D042B6 /* ArgumentParser in Frameworks */,
 				813D755929CA4AE700E165BB /* Commands in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,9 +204,10 @@
 		813D755229CA4AD600E165BB /* output-cli */ = {
 			isa = PBXGroup;
 			children = (
-				813D755329CA4AD600E165BB /* main.swift */,
+				813D755329CA4AD600E165BB /* Stub.swift */,
 				813D755D29CA4B4B00E165BB /* Output.swift */,
 				813D756229CA4CC000E165BB /* ANSIAttr.swift */,
+				816BD9D529F97C7B00D042B6 /* Info.plist */,
 			);
 			path = "output-cli";
 			sourceTree = "<group>";
@@ -272,6 +276,7 @@
 			name = "output-cli";
 			packageProductDependencies = (
 				813D755829CA4AE700E165BB /* Commands */,
+				816BD9D229F9738A00D042B6 /* ArgumentParser */,
 			);
 			productName = "output-cli";
 			productReference = 813D755129CA4AD600E165BB /* output-cli */;
@@ -329,6 +334,7 @@
 			mainGroup = 0A70B57D2820359500583E37;
 			packageReferences = (
 				8114EE4229C0E7940099578E /* XCRemoteSwiftPackageReference "swift-commands" */,
+				816BD9D129F9738A00D042B6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = 0A70B5872820359500583E37 /* Products */;
 			projectDirPath = "";
@@ -372,7 +378,7 @@
 			files = (
 				813D756329CA4CC000E165BB /* ANSIAttr.swift in Sources */,
 				813D755E29CA4B4B00E165BB /* Output.swift in Sources */,
-				813D755429CA4AD600E165BB /* main.swift in Sources */,
+				813D755429CA4AD600E165BB /* Stub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +570,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deviscoding.available;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -601,7 +607,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deviscoding.available;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -616,11 +622,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M97V8HVFPX;
-				INFOPLIST_FILE = "$(SRCROOT)/Available/Trunk/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/output-cli/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.output-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -633,11 +640,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M97V8HVFPX;
-				INFOPLIST_FILE = "$(SRCROOT)/Available/Trunk/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/output-cli/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.output-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -655,7 +663,7 @@
 				DEVELOPMENT_TEAM = M97V8HVFPX;
 				INFOPLIST_FILE = "$(SRCROOT)/Available/Trunk/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.available-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -674,7 +682,7 @@
 				DEVELOPMENT_TEAM = M97V8HVFPX;
 				INFOPLIST_FILE = "$(SRCROOT)/Available/Trunk/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.7;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.available-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -732,6 +740,14 @@
 				minimumVersion = 0.6.0;
 			};
 		};
+		816BD9D129F9738A00D042B6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -749,6 +765,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8114EE4229C0E7940099578E /* XCRemoteSwiftPackageReference "swift-commands" */;
 			productName = Commands;
+		};
+		816BD9D229F9738A00D042B6 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 816BD9D129F9738A00D042B6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
