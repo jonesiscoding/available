@@ -96,7 +96,7 @@ struct Teams {
     
     init(user: String? = nil) throws {
         if let resolved: String = user {
-            let localUser: LocalUser = try LocalUser(username: resolved)
+            let localUser: LocalUser = try LocalUser(resolved)
             self.user = localUser
         } else {
             if let consoleUser: MacUser = try LocalUser.fromConsole() {

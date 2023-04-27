@@ -35,7 +35,7 @@ extension MacUser {
         let consoleUser = SCDynamicStoreCopyConsoleUser(nil, nil, nil)
         if let username: String = consoleUser! as String? {
             if(UserValidator.isValid(username: username)) {
-                return try LocalUser(username: username)
+                return try LocalUser(username)
             }
         }
         
@@ -47,7 +47,7 @@ class LocalUser: MacUser {
     var username: String
     var userHome: URL
     
-    init(username: String) throws {
+    init(_ username: String) throws {
         if(!UserValidator.isValid(username: username)) {
             throw UserError.invalidUser(user: username)
         }
