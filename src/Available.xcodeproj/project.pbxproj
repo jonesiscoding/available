@@ -22,7 +22,6 @@
 		813D755C29CA4B0B00E165BB /* output-cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = 813D755129CA4AD600E165BB /* output-cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		813D755E29CA4B4B00E165BB /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D755D29CA4B4B00E165BB /* Output.swift */; };
 		813D756329CA4CC000E165BB /* ANSIAttr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D756229CA4CC000E165BB /* ANSIAttr.swift */; };
-		815771C429C0E2500062A092 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771C329C0E2500062A092 /* main.swift */; };
 		815771DA29C0E3860062A092 /* Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771D429C0E3860062A092 /* Focus.swift */; };
 		815771DB29C0E3860062A092 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771D529C0E3860062A092 /* Camera.swift */; };
 		815771DC29C0E3860062A092 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771D629C0E3860062A092 /* StringExtension.swift */; };
@@ -31,6 +30,8 @@
 		815771DF29C0E3860062A092 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771D929C0E3860062A092 /* System.swift */; };
 		815771E329C0E4310062A092 /* available-cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = 815771C129C0E2500062A092 /* available-cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		816BD9D329F9738A00D042B6 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 816BD9D229F9738A00D042B6 /* ArgumentParser */; };
+		81CB173229FAB0D3007FA51E /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB173129FAB0D3007FA51E /* Stub.swift */; };
+		81CB173429FADDC3007FA51E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 81CB173329FADDC3007FA51E /* ArgumentParser */; };
 		81E7632529DC8C3300A5C034 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7632429DC8C3300A5C034 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,7 +101,6 @@
 		813D755D29CA4B4B00E165BB /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		813D756229CA4CC000E165BB /* ANSIAttr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANSIAttr.swift; sourceTree = "<group>"; };
 		815771C129C0E2500062A092 /* available-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "available-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
-		815771C329C0E2500062A092 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		815771D429C0E3860062A092 /* Focus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Focus.swift; sourceTree = "<group>"; };
 		815771D529C0E3860062A092 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		815771D629C0E3860062A092 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -108,6 +108,8 @@
 		815771D829C0E3860062A092 /* Online.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Online.swift; sourceTree = "<group>"; };
 		815771D929C0E3860062A092 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		816BD9D529F97C7B00D042B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81CB173129FAB0D3007FA51E /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
+		81CB173529FADE60007FA51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E7632429DC8C3300A5C034 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81CB173429FADDC3007FA51E /* ArgumentParser in Frameworks */,
 				8114EE4629C0E79A0099578E /* Commands in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,9 +224,10 @@
 				815771D829C0E3860062A092 /* Online.swift */,
 				815771D629C0E3860062A092 /* StringExtension.swift */,
 				815771D929C0E3860062A092 /* System.swift */,
-				815771C329C0E2500062A092 /* main.swift */,
 				8114EE4729C107860099578E /* Status.swift */,
 				81E7632429DC8C3300A5C034 /* User.swift */,
+				81CB173129FAB0D3007FA51E /* Stub.swift */,
+				81CB173529FADE60007FA51E /* Info.plist */,
 			);
 			path = "available-cli";
 			sourceTree = "<group>";
@@ -297,6 +301,7 @@
 			name = "available-cli";
 			packageProductDependencies = (
 				8114EE4529C0E79A0099578E /* Commands */,
+				81CB173329FADDC3007FA51E /* ArgumentParser */,
 			);
 			productName = "available-cli";
 			productReference = 815771C129C0E2500062A092 /* available-cli */;
@@ -387,12 +392,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				815771DD29C0E3860062A092 /* Display.swift in Sources */,
+				81CB173229FAB0D3007FA51E /* Stub.swift in Sources */,
 				815771DF29C0E3860062A092 /* System.swift in Sources */,
 				815771DC29C0E3860062A092 /* StringExtension.swift in Sources */,
 				8114EE4829C107860099578E /* Status.swift in Sources */,
 				815771DA29C0E3860062A092 /* Focus.swift in Sources */,
 				81E7632529DC8C3300A5C034 /* User.swift in Sources */,
-				815771C429C0E2500062A092 /* main.swift in Sources */,
 				815771DE29C0E3860062A092 /* Online.swift in Sources */,
 				815771DB29C0E3860062A092 /* Camera.swift in Sources */,
 			);
@@ -570,7 +575,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deviscoding.available;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -607,7 +612,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deviscoding.available;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -627,7 +632,7 @@
 				DEVELOPMENT_TEAM = M97V8HVFPX;
 				INFOPLIST_FILE = "$(SRCROOT)/output-cli/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.output-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -645,7 +650,7 @@
 				DEVELOPMENT_TEAM = M97V8HVFPX;
 				INFOPLIST_FILE = "$(SRCROOT)/output-cli/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.output-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -658,12 +663,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = M97V8HVFPX;
-				INFOPLIST_FILE = "$(SRCROOT)/Available/Trunk/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/available-cli/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.available-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -677,12 +682,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
-				DEAD_CODE_STRIPPING = NO;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M97V8HVFPX;
-				INFOPLIST_FILE = "$(SRCROOT)/Available/Trunk/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/available-cli/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.deviscoding.available-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -767,6 +772,11 @@
 			productName = Commands;
 		};
 		816BD9D229F9738A00D042B6 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 816BD9D129F9738A00D042B6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		81CB173329FADDC3007FA51E /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 816BD9D129F9738A00D042B6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;

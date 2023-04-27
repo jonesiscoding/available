@@ -31,23 +31,6 @@ class UserStatus: CustomStringConvertible {
         self.value = value
         self.status = (self.value.isEmpty || self.value == "False") ? false : true
     }
-    
-    func output() -> Bool {
-        if(isVerbose) {
-            print(self.label.style(ANSIAttr.cyan).padding(toLength: 76, withPad: ".", startingAt: 0), terminator: " ")
-            if(self.status) {
-                print("[\(self.value.style(.red))]")
-            } else {
-                print("[\(self.value.style(.green))]")
-            }
-        } else {
-            if(!isQuiet && self.status) {
-                print(self.slug)
-            }
-        }
-        
-        return self.status
-    }
 }
 
 class TeamsStatus: UserStatus {
