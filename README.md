@@ -1,6 +1,9 @@
 # Available
 
-Available includes CLI tools designed to ease writing scripts for administration tasks on macOS. These CLI tools are wrapped within an application shell in order to provide a reliable installation path.
+Available includes two CLI tools designed to ease writing scripts for administration tasks on macOS. These CLI tools are wrapped within an application shell in order to provide a reliable installation path.
+
+* `available-cli` evaluates whether the console user is 'available' for interaction.
+* `output-cli` aids in displaying script output and logging script results.
 
 In most cases, the included tools would be used in scripts run via an MDM such as Jamf Pro.
 
@@ -20,8 +23,8 @@ Please test and determine the best way to use the tool in your environment.
 
 Some of the methodology used within these tools may not match the 'Swifty' way of obtaining the information, for two primary reasons:
 
+* While some of the functionality may be possible in Swift, some of those APIs are not available to CLI applications or are only possible for the user running the application.
 * Swift is not, by any means, my primary programming language.
-* While some of the functionality may be possible in Swift, some of those APIs are not available to CLI applications.
 
 As such, I am open to suggestions for improving the tests and reducing the number of bash callouts within the code. Open an issue or a PR!
 
