@@ -112,6 +112,7 @@ This tool can also provide consistent indentation, allowing for sectioned output
 | `--inline`     | Message without line feed.                                                                                                     |
 | `--section`    | Message in magenta.  All subsequent messages will be indented.                                                                 |
 | `--endsection` | No message, but ends previously set section.                                                                                   |
+| `--log <path>` | Instead of displaying the message, output to the given log file.  Logged messages are automatically prefixed with a timestamp. |
 
 ### Verbosity Flags
 
