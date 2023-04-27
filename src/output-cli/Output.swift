@@ -19,6 +19,7 @@ public class Output {
     public var level: Int
     private let line: String = "----------------------------------------------------------------------------"
     public var notifying: Int = 0
+    public var dateFormat = "yyyy-MM-dd HH:mm:ss"
     private lazy var color: Bool = {
         let result = Commands.Bash.run("[ -n \"$TERM\" ] && [ \"$TERM\" != \"dumb\" ] && /usr/bin/tput -T$TERM colors")
         if result.isFailure {
@@ -123,6 +124,26 @@ public class Output {
         }
     }
     
+    public func log(_ message: String, file: URL) throws {
+        let output = self.timestamp(message)
+        let fm = FileManager()
+        // Convert to Data
+        guard let data = ("\(output)\n").data(using: String.Encoding.utf8) else { return }
+        if fm.fileExists(atPath: file.path) {
+            let fileHandle = try FileHandle(forWritingTo: file)
+            fileHandle.seekToEndOfFile()
+            fileHandle.write(data)
+            fileHandle.closeFile()
+        } else {
+            var isDir : ObjCBool = true
+            if(!fm.fileExists(atPath: file.deletingLastPathComponent().path, isDirectory: &isDir)) {
+                try fm.createDirectory(at: file.deletingLastPathComponent(), withIntermediateDirectories: true)
+            }
+            
+            try data.write(to: file, options: .atomicWrite)
+        }
+    }
+    
     // Generic Functions
     
     public func badge(badge: String, context: OutputContext = .normal) {
@@ -197,5 +218,20 @@ public class Output {
         }
 
         print(string, separator: separator, terminator: terminator)
+    }
+    
+    private func timestamp(_ message: String) -> String {
+        // Get the Date Handled
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let timestamp = formatter.string(from: date)
+        
+        // Break Message Into Parts, Add Timestamp
+        let iLines = message.components(separatedBy: "\n")
+        let oLines: [String] = iLines.map { "\(timestamp)  \($0)" }
+        
+        // Return as single string
+        return oLines.joined(separator: "\n")
     }
 }

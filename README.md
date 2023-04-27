@@ -82,7 +82,7 @@ Note that the script must be run via sudo or root for the best results.  This is
 
 ## Script Output CLI Tool
 
-While many management scripts can have fairly plain output, it can be useful for troubleshooting purposes to standarize output. The addition of color and context can also be helpful when testing scripts or running them directly from the CLI.
+While many management scripts can have fairly plain output, it can be useful for troubleshooting purposes to standardize output. The addition of color and context can also be helpful when testing scripts or running them directly from the CLI.
 
 Using `output-cli`, script output can be easily colorized and standardized across all your management scripts. When used with a terminal that supports ANSI color, `output-cli` uses contextual colors based on the given flags.  When run via a method that has no color support, only plain text is used.
 
