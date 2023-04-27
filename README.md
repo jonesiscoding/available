@@ -21,7 +21,7 @@ Please test and determine the best way to use the tool in your environment.
 Some of the methodology used within these tools may not match the 'Swifty' way of obtaining the information, for two primary reasons:
 
 * Swift is not, by any means, my primary programming language.
-* While some of the functionality may be possible in Swift, some of those APIs are not avaiable to CLI applications.
+* While some of the functionality may be possible in Swift, some of those APIs are not available to CLI applications.
 
 As such, I am open to suggestions for improving the tests and reducing the number of bash callouts within the code. Open an issue or a PR!
 
@@ -44,19 +44,19 @@ Often one may need to interact with a user when running a management script. As 
 
 That's where `available-cli` comes in.  This tool can check several different items to determine if it is a wise time to interrupt the user.  Best of all, you can decide what level of deference you want to give to the user based on the flags used.
 
-| Flag | Description |
-| --- | --- |
-| `--camera` | Camera Active? |
-| `--presenting` | 'No Sleep' Display Assertation? |
-| `--zoom` | Zoom Meeting Active? |
-| `--webex` | WebEx Meeting Active? |
-| `--gotomeeting` | GotoMeeting Meeting Active? |
-| `--teams` | Teams Meeting Active? |
-| `--focus` | Focus Mode Active? | 
-| `--power` | On Battery Power? |
-| `--filevault` | FileVault Encrypting? |
-| `--metered` | Is 'Low Data Mode' Connection? |
-| `--all` | Includes all flags above |
+| Flag            | Description                    |
+|-----------------|--------------------------------|
+| `--camera`      | Camera Active?                 |
+| `--presenting`  | 'No Sleep' Display Assertion?  |
+| `--zoom`        | Zoom Meeting Active?           |
+| `--webex`       | WebEx Meeting Active?          |
+| `--gotomeeting` | GotoMeeting Meeting Active?    |
+| `--teams`       | Teams Meeting Active?          |
+| `--focus`       | Focus Mode Active?             | 
+| `--power`       | On Battery Power?              |
+| `--filevault`   | FileVault Encrypting?          |
+| `--metered`     | Is 'Low Data Mode' Connection? |
+| `--all`         | Includes all flags above       |
 
 Additionally, the *Work* focus can be excluded from the `--focus` check with the additional flag `--nowork`.  
 
@@ -64,11 +64,11 @@ Additionally, the *Work* focus can be excluded from the `--focus` check with the
 
 Depending on whether you would like some feedback, or simply a boolean result, usage may vary. Output can take three forms:
 
-| Flag | Description |
-| --- | --- |
-| `--quiet` | No output; return code 1 means 'unavailable'. |
-| `--verbose` | Status of all specified conditions is shown. |
-| _no flag_ | Simple output for only the first failed condition. |
+| Flag        | Description                                        |
+|-------------|----------------------------------------------------|
+| `--quiet`   | No output; return code 1 means 'unavailable'.      |
+| `--verbose` | Status of all specified conditions is shown.       |
+| _no flag_   | Simple output for only the first failed condition. |
 
 Here is an example of Bash usage, with a standard installation:
 
@@ -90,36 +90,37 @@ This tool can also provide consistent indentation, allowing for sectioned output
 
 ### Context Flags
 
-| Flag | Text Color |
-| --- | --- |
-| `--success` | Green |
-| `--info` | Cyan |
-| `--msg` | Magenta |
-| `--error` | Red |
-| `--warning` | Yellow |
-| `--default` | No Color |
+| Flag        | Text Color |
+|-------------|------------|
+| `--success` | Green      |
+| `--info`    | Cyan       |
+| `--msg`     | Magenta    |
+| `--error`   | Red        |
+| `--warning` | Yellow     |
+| `--default` | No Color   |
 
 ### Function Flags
 
-| Flag | Output Style |
-| --- | --- |
-| `--notify` | Message, in cyan, followed by spacers.  Typically used before an activity. |
-| `--badge` | Your short message inside uncolored brackets, such as [DONE].  Typically used an activity.  See example below.
-| `--line` | Message with line feed. |
-| `--inline` | Message without line feed. |
-| `--section` | Message in magenta.  All subsequent messages will be indented. |
-| `--endsection` | No message, but ends previously set section. |
+| Flag           | Output Style                                                                                                                   |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `--notify`     | Message, in cyan, followed by spacers.  Typically used before an activity.                                                     |
+| `--badge`      | Your short message inside uncolored brackets, such as [DONE].  Typically used an activity.  See example below.                 |
+| `--line`       | Message with line feed.                                                                                                        |
+| `--inline`     | Message without line feed.                                                                                                     |
+| `--section`    | Message in magenta.  All subsequent messages will be indented.                                                                 |
+| `--endsection` | No message, but ends previously set section.                                                                                   |
 
 ### Verbosity Flags
 
-By setting the environment variable `OUTPUT_QUIET=1` or `OUTPUT_VERBOSE=1` prior to using `output-cli`, you  can emit messages for different verbosity levels.
+By setting the environment variable `OUTPUT_QUIET=1` or `OUTPUT_VERBOSE=1` prior to using `output-cli`, you can emit messages for different verbosity levels.
 
-| Flag | Output Style |
-| --- | --- |
-| `--quiet` | Message will display even if `OUTPUT_QUIET=1` |
+| Flag        | Output Style                                    |
+|-------------|-------------------------------------------------|
+| `--quiet`   | Message will display even if `OUTPUT_QUIET=1`   |
 | `--verbose` | Message will display only if `OUTPUT_VERBOSE=2` | 
-| `--very-verbose` | Message will display only if `OUTPUT_VERBOSE=3` | 
-| _no flag_ | Message will display if not `OUTPUT_QUIET=1` |
+| `-vv`       | Message will display only if `OUTPUT_VERBOSE=3` | 
+| `-vvv`      | Message will display only if `OUTPUT_VERBOSE=4` | 
+| _no flag_   | Message will display if not `OUTPUT_QUIET=1`    |
 
 ### Example Usage
 
