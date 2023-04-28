@@ -98,6 +98,33 @@ enum StatusFlags: String, CaseIterable, EnumerableFlag {
             return nil
         }
     }
+
+    var label: String {
+        switch self {
+        case .camera:
+            return "Camera Active"
+        case .zoom:
+            return "Zoom Call Active"
+        case .gotomeeting:
+            return "GoToMeeting Active"
+        case .teams:
+            return "Teams Meeting Active"
+        case .webex:
+            return "WebEx Call Active"
+        case .presenting:
+            return "Presentation Mode"
+        case .focus:
+            return "Focus Mode"
+        case .filevault:
+            return "FileVault Encrypting"
+        case .power:
+            return "Battery Power"
+        case .metered:
+            return "Metered Network"
+        default:
+            return ""
+        }
+    }
 }
 
 @main

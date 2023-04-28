@@ -39,7 +39,7 @@ class TeamsStatus: UserStatus {
     }
     
     init(from: Teams) {
-        super.init(label: "Teams Active", status: from.active)
+        super.init(label: StatusFlags.teams.label, status: from.active)
     }
 }
 
@@ -49,7 +49,7 @@ class ZoomStatus: UserStatus {
     }
     
     init(from: Zoom) {
-        super.init(label: "Zoom Active", status: from.active)
+        super.init(label: StatusFlags.zoom.label, status: from.active)
     }
 }
 
@@ -59,7 +59,7 @@ class WebExStatus: UserStatus {
     }
     
     init(from: WebEx) {
-        super.init(label: "WebEx Active", status: from.active)
+        super.init(label: StatusFlags.webex.label, status: from.active)
     }
 }
 
@@ -69,7 +69,7 @@ class GoToMeetingStatus: UserStatus {
     }
     
     init(from: GoToMeeting) {
-        super.init(label: "GoToMeeting Active", status: from.active)
+        super.init(label: StatusFlags.gotomeeting.label, status: from.active)
     }
 }
 
@@ -81,9 +81,9 @@ class PresentingStatus: UserStatus {
     init(from: NoDisplaySleep) {
         
         if(from.active) {
-            super.init(label: "Presentation Mode", value: from.value)
+            super.init(label: StatusFlags.presenting.label, value: from.value)
         } else {
-            super.init(label: "Presentation Mode", status: false)
+            super.init(label: StatusFlags.presenting.label, status: false)
         }
     }
 }
@@ -95,7 +95,7 @@ class FileVaultStatus: UserStatus {
     }
     
     init(from: System) {
-        super.init(label: "FileVault Encrypting", status: from.isEncrypting)
+        super.init(label: StatusFlags.filevault.label, status: from.isEncrypting)
     }
 }
 
@@ -105,7 +105,7 @@ class BatteryPowerStatus: UserStatus {
     }
     
     init(from: System) {
-        super.init(label: "Battery Power", status: !from.isAcPower)
+        super.init(label: StatusFlags.power.label, status: !from.isAcPower)
     }
 }
 
@@ -115,7 +115,7 @@ class MeteredNetworkStatus: UserStatus {
     }
     
     init(from: MeteredNetwork) {
-        super.init(label: "Metered Network", status: from.isMetered)
+        super.init(label: StatusFlags.metered.label, status: from.isMetered)
     }
 }
 
@@ -134,9 +134,9 @@ class FocusModeStatus: UserStatus {
         }
         
         if(mode.isEmpty) {
-            super.init(label: "Focus Mode", status: false)
+            super.init(label: StatusFlags.focus.label, status: false)
         } else {
-            super.init(label: "Focus Mode", value: mode)
+            super.init(label: StatusFlags.focus.label, value: mode)
         }
     }
 }
@@ -156,9 +156,9 @@ class CameraStatus: UserStatus {
         }
         
         if(activeCamera.isEmpty) {
-            super.init(label: "Camera Active", status: false)
+            super.init(label: StatusFlags.camera.label, status: false)
         } else {
-            super.init(label: "Camera Active", value: activeCamera)
+            super.init(label: StatusFlags.camera.label, value: activeCamera)
         }
     }
 }
