@@ -99,9 +99,9 @@ struct ModeConfig: Codable {
 /// - Parameter user: The username for which to retrieve focus information.  If not given, will default to the current console user.
 ///
 struct Focus {
-    var user: String?
+    var user: MacUser?
     
-    init(user: String? = nil) {
+    init(user: MacUser? = nil) {
         self.user = user
     }
     
@@ -113,19 +113,19 @@ struct Focus {
     
     func getMode() throws -> String {
         if #available(macOS 12.0, *) {
-            let focusMonty = try FocusMonterey(username: self.user)
+            let focusMonty = try FocusMonterey(user: self.user)
             
             return focusMonty.getMode()
         }
         
         if #available(macOS 11.0, *) {
-                let focusBiggy = try FocusBigSur(username: self.user)
+                let focusBiggy = try FocusBigSur(user: self.user)
                 
                 return try focusBiggy.isDoNotDisturb() ? "Do Not Disturb" : ""
         }
                 
         if #available(macOS 10.15, *) {
-            let focusCaty = try FocusCatalina(username: self.user)
+            let focusCaty = try FocusCatalina(user: self.user)
             
             return try focusCaty.isDoNotDisturb() ? "Do Not Disturb" : ""
         }
@@ -144,6 +144,16 @@ enum FocusError: Error {
 class FocusBase {
     var user: MacUser?
     
+    init(user: MacUser? = nil) throws {
+        if let resolved: MacUser = user {
+            self.user = resolved
+        } else {
+            if let consoleUser: MacUser = try LocalUser.fromConsole() {
+                self.user = consoleUser
+            }
+        }
+    }
+
     init(username: String? = nil) throws {
         if let resolved: String = username {
             let localUser: LocalUser = try LocalUser(resolved)

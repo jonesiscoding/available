@@ -94,10 +94,9 @@ struct TeamsStorage: Codable {
 struct Teams {
     var user: MacUser?
     
-    init(user: String? = nil) throws {
-        if let resolved: String = user {
-            let localUser: LocalUser = try LocalUser(resolved)
-            self.user = localUser
+    init(user: MacUser? = nil) throws {
+        if let resolved: MacUser = user {
+            self.user = resolved
         } else {
             if let consoleUser: MacUser = try LocalUser.fromConsole() {
                 self.user = consoleUser

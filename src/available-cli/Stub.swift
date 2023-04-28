@@ -72,7 +72,7 @@ enum StatusFlags: String, CaseIterable, EnumerableFlag {
         return [.user,.focus,.teams,.all]
     }
     
-    func status(user: String?) throws -> UserStatus? {
+    func status(user: MacUser?) throws -> UserStatus? {
         switch self {
         case .camera:
             return try CameraStatus(from: cameras)
@@ -151,7 +151,7 @@ struct AvailableCli: ParsableCommand {
                 print("")
             }
             for condition in normalized {
-                if let status: UserStatus = try condition.status(user: user.username) {
+                if let status: UserStatus = try condition.status(user: user) {
                     let isException: Bool = (status.slug == "focus-Work" && self.noWork)
                     allAvailable = allAvailable ? (status.status && !isException) : false
                     if self.verbose != 0 {
