@@ -171,48 +171,70 @@ struct AvailableCli: ParsableCommand {
     }
 
     mutating func run() throws {
-        if let user: MacUser = _user {
-            let normalized: [StatusFlags] = self.normalize()
-            var allAvailable: Bool = true
-            if(self.verbose != 0) {
-                print("")
-            }
-            for condition in normalized {
+        let normalized: [StatusFlags] = self.normalize()
+        var allAvailable: Bool = true
+        if(self.verbose != 0) {
+            print("")
+        }
+
+        let user: MacUser? = _user
+        for condition in normalized {
+            let isPossible = (user != nil || StatusFlags.systemCases.contains(condition))
+            if(isPossible) {
+                // User present, or system condition
                 if let status: UserStatus = try condition.status(user: user) {
                     let isException: Bool = (status.slug == "focus-Work" && self.noWork)
                     allAvailable = allAvailable ? (status.status && !isException) : false
                     if self.verbose != 0 {
-                        print(status.label.style(ANSIAttr.cyan).padding(toLength: 76, withPad: ".", startingAt: 0), terminator: " ")
+                        // Full output
                         let style: ANSIAttr = (status.status && !isException) ? .green : .red
-                        print("[\(status.value.style(style))]")
+                        self.printLabel(label: status.label)
+                        self.printValue(value: status.value, style: style)
                     } else {
                         if(status.status && !isException ) {
                             if self.quiet {
+                                // No output
                                 throw ExitCode(1)
                             } else {
+                                // Basic output
                                 print(status.slug)
                                 throw ExitCode(1)
                             }
                         }
                     }
                 }
-            }
-            
-            print("")
-            if(allAvailable) {
-                AvailableCli.exit()
             } else {
-                throw ExitCode(1)
-            }
-        } else {
-            if self.verbose != 0 {
-                throw RuntimeError("No User Logged In".style(.red))
-            } else if self.quiet {
-                throw ExitCode(1)
-            } else {
-                throw RuntimeError("none")
+                allAvailable = false
+                if(self.verbose != 0) {
+                    // Full Output
+                    self.printLabel(label: condition.label)
+                    self.printValue(value: "No User", style: .red)
+                } else {
+                    if !self.quiet {
+                        // Basic output
+                        print("none")
+                    }
+
+                    // No output
+                    throw ExitCode(1)
+                }
             }
         }
+
+        print("")
+        if(allAvailable) {
+            AvailableCli.exit()
+        } else {
+            throw ExitCode(1)
+        }
+    }
+
+    private func printValue(value: String, style: ANSIAttr = .green) {
+        print("[\(value.style(style))]")
+    }
+
+    private func printLabel(label: String) {
+        print(label.style(ANSIAttr.cyan).padding(toLength: 76, withPad: ".", startingAt: 0), terminator: " ")
     }
 }
 
