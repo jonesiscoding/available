@@ -54,6 +54,10 @@ extension OutputContext: EnumerableFlag {
              return "Displays message without color."
         }
     }
+
+    public static func name(for value: Self) -> NameSpecification {
+        return .customLong(value.rawValue)
+    }
 }
 
 enum OutputVerbosity: Int, CaseIterable {
