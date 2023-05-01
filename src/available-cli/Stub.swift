@@ -172,7 +172,7 @@ struct AvailableCli: ParsableCommand {
 
     mutating func run() throws {
         let normalized: [StatusFlags] = self.normalize()
-        var allAvailable: Bool = true
+        var unavailable: Bool = false
         if(self.verbose != 0) {
             print("")
         }
@@ -184,7 +184,7 @@ struct AvailableCli: ParsableCommand {
                 // User present, or system condition
                 if let status: UserStatus = try condition.status(user: user) {
                     let isException: Bool = (status.slug == "focus-Work" && self.noWork)
-                    allAvailable = allAvailable ? (status.status && !isException) : false
+                    unavailable = unavailable ? true : (status.status && !isException)
                     if self.verbose != 0 {
                         // Full output
                         let style: ANSIAttr = (status.status && !isException) ? .green : .red
@@ -204,7 +204,6 @@ struct AvailableCli: ParsableCommand {
                     }
                 }
             } else {
-                allAvailable = false
                 if(self.verbose != 0) {
                     // Full Output
                     self.printLabel(label: condition.label)
@@ -222,10 +221,10 @@ struct AvailableCli: ParsableCommand {
         }
 
         print("")
-        if(allAvailable) {
-            AvailableCli.exit()
-        } else {
+        if(unavailable) {
             throw ExitCode(1)
+        } else {
+            AvailableCli.exit()
         }
     }
 
