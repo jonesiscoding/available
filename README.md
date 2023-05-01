@@ -61,7 +61,7 @@ That's where `available-cli` comes in.  This tool can check several different it
 | `--metered`     | Is 'Low Data Mode' Connection? |
 | `--all`         | Includes all flags above       |
 
-Additionally, the *Work* focus can be excluded from the `--focus` check with the additional flag `--nowork`.  
+Additionally, the *Work* focus can be excluded from the `--focus` check with the additional flag `--no-work`.  
 
 ### Usage Example
 
