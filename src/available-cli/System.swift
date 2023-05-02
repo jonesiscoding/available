@@ -7,7 +7,6 @@
 
 import Foundation
 import Commands
-import Network
 
 /// Contains methods for evaluating if system is encrypting FileVault, on AC power.
 struct System {
