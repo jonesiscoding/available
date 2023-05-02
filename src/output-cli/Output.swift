@@ -3,7 +3,6 @@
 //
 
 import Foundation
-import Commands
 import ArgumentParser
 
 public enum OutputContext: String, CaseIterable {
@@ -20,17 +19,12 @@ public class Output {
     private let line: String = "----------------------------------------------------------------------------"
     public var notifying: Int = 0
     public var dateFormat = "yyyy-MM-dd HH:mm:ss"
-    private lazy var color: Bool = {
-        let result = Commands.Bash.run("[ -n \"$TERM\" ] && [ \"$TERM\" != \"dumb\" ] && /usr/bin/tput -T$TERM colors")
-        if result.isFailure {
-          return false
-        } else if result.output.isEmpty {
-          return false
-        } else if 8 >= Int(result.output) ?? 0 {
-          return false
-        }
-        return true
-    }()
+    private var color: Bool {
+        self.terminal.colors > 0
+    }
+    private var terminal: Terminal {
+        return Terminal()
+    }
 
     public init(level: Int) {
         self.level = level

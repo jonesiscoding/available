@@ -18,7 +18,6 @@
 		8114EE4629C0E79A0099578E /* Commands in Frameworks */ = {isa = PBXBuildFile; productRef = 8114EE4529C0E79A0099578E /* Commands */; };
 		8114EE4829C107860099578E /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114EE4729C107860099578E /* Status.swift */; };
 		813D755429CA4AD600E165BB /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D755329CA4AD600E165BB /* Stub.swift */; };
-		813D755929CA4AE700E165BB /* Commands in Frameworks */ = {isa = PBXBuildFile; productRef = 813D755829CA4AE700E165BB /* Commands */; };
 		813D755C29CA4B0B00E165BB /* output-cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = 813D755129CA4AD600E165BB /* output-cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		813D755E29CA4B4B00E165BB /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D755D29CA4B4B00E165BB /* Output.swift */; };
 		813D756329CA4CC000E165BB /* ANSIAttr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813D756229CA4CC000E165BB /* ANSIAttr.swift */; };
@@ -30,6 +29,7 @@
 		815771DF29C0E3860062A092 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815771D929C0E3860062A092 /* System.swift */; };
 		815771E329C0E4310062A092 /* available-cli in CopyFiles */ = {isa = PBXBuildFile; fileRef = 815771C129C0E2500062A092 /* available-cli */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		816BD9D329F9738A00D042B6 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 816BD9D229F9738A00D042B6 /* ArgumentParser */; };
+		81B619112A01C91600944193 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B619102A01C91600944193 /* Terminal.swift */; };
 		81CB173229FAB0D3007FA51E /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CB173129FAB0D3007FA51E /* Stub.swift */; };
 		81CB173429FADDC3007FA51E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 81CB173329FADDC3007FA51E /* ArgumentParser */; };
 		81E7632529DC8C3300A5C034 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7632429DC8C3300A5C034 /* User.swift */; };
@@ -108,6 +108,7 @@
 		815771D829C0E3860062A092 /* Online.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Online.swift; sourceTree = "<group>"; };
 		815771D929C0E3860062A092 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		816BD9D529F97C7B00D042B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B619102A01C91600944193 /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminal.swift; sourceTree = "<group>"; };
 		81CB173129FAB0D3007FA51E /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 		81CB173529FADE60007FA51E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81E7632429DC8C3300A5C034 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -127,7 +128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				816BD9D329F9738A00D042B6 /* ArgumentParser in Frameworks */,
-				813D755929CA4AE700E165BB /* Commands in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +211,7 @@
 				813D755D29CA4B4B00E165BB /* Output.swift */,
 				813D756229CA4CC000E165BB /* ANSIAttr.swift */,
 				816BD9D529F97C7B00D042B6 /* Info.plist */,
+				81B619102A01C91600944193 /* Terminal.swift */,
 			);
 			path = "output-cli";
 			sourceTree = "<group>";
@@ -279,7 +280,6 @@
 			);
 			name = "output-cli";
 			packageProductDependencies = (
-				813D755829CA4AE700E165BB /* Commands */,
 				816BD9D229F9738A00D042B6 /* ArgumentParser */,
 			);
 			productName = "output-cli";
@@ -382,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				813D756329CA4CC000E165BB /* ANSIAttr.swift in Sources */,
+				81B619112A01C91600944193 /* Terminal.swift in Sources */,
 				813D755E29CA4B4B00E165BB /* Output.swift in Sources */,
 				813D755429CA4AD600E165BB /* Stub.swift in Sources */,
 			);
@@ -762,11 +763,6 @@
 			productName = Commands;
 		};
 		8114EE4529C0E79A0099578E /* Commands */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8114EE4229C0E7940099578E /* XCRemoteSwiftPackageReference "swift-commands" */;
-			productName = Commands;
-		};
-		813D755829CA4AE700E165BB /* Commands */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8114EE4229C0E7940099578E /* XCRemoteSwiftPackageReference "swift-commands" */;
 			productName = Commands;

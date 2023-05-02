@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Commands
 import ArgumentParser
 
 enum OutputType: String, CaseIterable, EnumerableFlag {
