@@ -130,7 +130,7 @@ public class Output {
     
     public func log(_ message: String, file: URL) throws {
         let output = self.timestamp(message)
-        let fm = FileManager()
+        let fm: FileManager = FileManager()
         // Convert to Data
         guard let data = ("\(output)\n").data(using: String.Encoding.utf8) else { return }
         if fm.fileExists(atPath: file.path) {
@@ -227,7 +227,7 @@ public class Output {
     private func timestamp(_ message: String) -> String {
         // Get the Date Handled
         let date = Date()
-        let formatter = DateFormatter()
+        let formatter: DateFormatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let timestamp = formatter.string(from: date)
         
