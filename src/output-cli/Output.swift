@@ -38,6 +38,10 @@ public class Output {
     
     // Contextual Functions
     
+    public func blankln() {
+        self.outputln(message: "")
+    }
+
     public func successbg(_ badge: String) {
         self.badge(badge: badge, context: .success)
     }
