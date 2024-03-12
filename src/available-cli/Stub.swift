@@ -101,8 +101,6 @@ enum StatusFlags: String, CaseIterable, EnumerableFlag {
 
     var label: String {
         switch self {
-        case .camera:
-            return "Camera Active"
         case .zoom:
             return "Zoom Call Active"
         case .gotomeeting:
@@ -111,6 +109,8 @@ enum StatusFlags: String, CaseIterable, EnumerableFlag {
             return "Teams Meeting Active"
         case .webex:
             return "WebEx Call Active"
+        case .camera:
+            return "Camera Active"
         case .presenting:
             return "Presentation Mode"
         case .focus:
