@@ -30,11 +30,12 @@ struct Camera {
             let propsize:UInt32 = UInt32(MemoryLayout<CFString?>.size)
             var dataUsed: UInt32 = 0
 
-            let result:OSStatus = CMIOObjectGetPropertyData(self.id, &address, 0, nil, propsize, &dataUsed, &name)
-            if (result != 0) {
-                return ""
+            var result: OSStatus = 0
+            withUnsafeMutablePointer(to: &name) { namePtr in
+                result = CMIOObjectGetPropertyData(id, &address, 0, nil, propsize, &dataUsed, namePtr)
             }
 
+            guard result == 0 else { return "" }
             return name as String?
         }
     }
