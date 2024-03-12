@@ -1,8 +1,5 @@
 //
 //  Online.swift
-//  com.econoprint.available
-//
-//  Created by Aaron Jones on 3/10/23.
 //
 
 import Foundation
@@ -51,7 +48,55 @@ struct Zoom {
     }
 }
 
-struct TeamsAppStates: Codable {
+/// Retrieves the active status of Teams "Work or School" or Teams Classic.
+struct Teams {
+    var user: MacUser?
+
+    init(user: MacUser? = nil) throws {
+        if let resolved: MacUser = user {
+            self.user = resolved
+        } else {
+            if let consoleUser: MacUser = try LocalUser.fromConsole() {
+                self.user = consoleUser
+            }
+        }
+    }
+
+    var active: Bool {
+        let teamsWork = TeamsWork()
+        if teamsWork.active {
+            return true
+        }
+
+        if let user = self.user {
+            do {
+                let teamsClassic = try TeamsClassic(user: user)
+                if teamsClassic.active {
+                    return true
+                }
+            } catch {
+                return false
+            }
+        }
+
+        return false
+    }
+}
+
+/// Retrieves the active status of Teams "Work or School"
+struct TeamsWork {
+    var active: Bool {
+        // There might be a Swift way to do this,
+        let result = Commands.Bash.run("pmset -g | grep \"display sleep prevented by\" | grep \"MSTeams\"")
+        if result.isSuccess {
+          return true
+        }
+
+        return false
+    }
+}
+
+struct TeamsClassicAppStates: Codable {
     var states: String
     var lastStateTime: Float
     
@@ -82,16 +127,16 @@ struct TeamsAppStates: Codable {
     }
 }
 
-struct TeamsStorage: Codable {
-    var appStates: TeamsAppStates
-    var webAppStates: TeamsAppStates
+struct TeamsClassicStorage: Codable {
+    var appStates: TeamsClassicAppStates
+    var webAppStates: TeamsClassicAppStates
 }
 
-/// Retrieves the active status of Microsoft Teams
+/// Retrieves the active status of Microsoft Teams Classic
 ///
 /// - Authors: brunerd <https://www.brunerd.com/blog/2022/03/07/respecting-focus-and-meeting-status-in-your-mac-scripts-aka-dont-be-a-jerk/> (Original)
-///           Aaron M Jones <am@jonesiscoding.com> (Modified to allow for better detection of end of calls, adapted to Swift)
-struct Teams {
+///            Aaron M Jones <am@jonesiscoding.com> (Modified to allow for better detection of end of calls, adapted to Swift)
+struct TeamsClassic {
     var user: MacUser?
     
     init(user: MacUser? = nil) throws {
@@ -116,7 +161,7 @@ struct Teams {
 
                 let decoder = JSONDecoder()
                 do {
-                    let teamsStorage = try decoder.decode(TeamsStorage.self, from: data)
+                    let teamsStorage = try decoder.decode(TeamsClassicStorage.self, from: data)
                     
                     if(teamsStorage.appStates.isActive() || teamsStorage.webAppStates.isActive()) {
                         return true
