@@ -1,9 +1,6 @@
 //
 //  Terminal.swift
 //
-//
-//  Created by Aaron Jones on 4/28/23.
-//
 
 import Foundation
 

@@ -1,8 +1,5 @@
 //
-//  main.swift
-//  output-cli
-//
-//  Created by Aaron Jones on 3/21/23.
+//  Stub.swift
 //
 
 import Foundation

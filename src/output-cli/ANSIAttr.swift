@@ -1,12 +1,12 @@
 //
-// Created by Aaron Jones on 9/30/22.
+// ANSIAttr.swift
 //
 
 import Foundation
 import Commands
 
 public enum ANSIAttr: UInt8 {
-    /* text styling */
+    // text styling
     case normal         = 0
     case bold           = 1
     case dim            = 2
@@ -26,7 +26,7 @@ public enum ANSIAttr: UInt8 {
     case noInverse      = 27
     case noHidden       = 28
     case noStrike       = 29
-    /* foreground text coloring */
+    // foreground text coloring
     case black          = 30
     case red            = 31
     case green          = 32
@@ -45,7 +45,7 @@ public enum ANSIAttr: UInt8 {
     case lightMagenta   = 95
     case lightCyan      = 96
     case white          = 97
-    /* background text coloring */
+    // background text coloring
     case onBlack        = 40
     case onRed          = 41
     case onGreen        = 42

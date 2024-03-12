@@ -1,8 +1,5 @@
 //
 //  Stub.swift
-//  available-cli
-//
-//  Created by Aaron Jones on 4/27/23.
 //
 
 import Foundation

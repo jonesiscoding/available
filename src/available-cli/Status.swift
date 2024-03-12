@@ -1,8 +1,5 @@
 //
 //  Status.swift
-//  available-cli
-//
-//  Created by Aaron Jones on 3/14/23.
 //
 
 import Foundation

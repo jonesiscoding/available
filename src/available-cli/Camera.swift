@@ -1,8 +1,5 @@
 //
 //  Camera.swift
-//  com.econoprint.available
-//
-//  Created by Aaron Jones on 3/10/23.
 //
 
 import Foundation

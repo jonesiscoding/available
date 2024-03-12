@@ -1,8 +1,5 @@
 //
 //  User.swift
-//  available-cli
-//
-//  Created by Aaron Jones on 4/4/23.
 //
 
 import Foundation
