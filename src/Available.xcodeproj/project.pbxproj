@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -340,6 +340,7 @@
 			packageReferences = (
 				8114EE4229C0E7940099578E /* XCRemoteSwiftPackageReference "swift-commands" */,
 				816BD9D129F9738A00D042B6 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				815A4AC32D5E92E000234878 /* XCLocalSwiftPackageReference "../../swift-ui-helper" */,
 			);
 			productRefGroup = 0A70B5872820359500583E37 /* Products */;
 			projectDirPath = "";
@@ -736,6 +737,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		815A4AC32D5E92E000234878 /* XCLocalSwiftPackageReference "../../swift-ui-helper" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../swift-ui-helper";
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		8114EE4229C0E7940099578E /* XCRemoteSwiftPackageReference "swift-commands" */ = {

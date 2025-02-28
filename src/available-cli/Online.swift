@@ -155,23 +155,41 @@ struct TeamsClassic {
             let fm = FileManager()
             if fm.fileExists(atPath: teamsJson) {
                 let teamsUrl = URL(fileURLWithPath: teamsJson)
-                guard let data = try? Data(contentsOf: teamsUrl) else {
-                    return false
-                }
-
-                let decoder = JSONDecoder()
-                do {
-                    let teamsStorage = try decoder.decode(TeamsClassicStorage.self, from: data)
-                    
-                    if(teamsStorage.appStates.isActive() || teamsStorage.webAppStates.isActive()) {
-                        return true
+                if isFileCurrent(url: teamsUrl) {
+                    guard let data = try? Data(contentsOf: teamsUrl) else {
+                        return false
                     }
-                } catch {
-                    return false
+
+                    let decoder = JSONDecoder()
+                    do {
+                        let teamsStorage = try decoder.decode(TeamsClassicStorage.self, from: data)
+                        
+                        if(teamsStorage.appStates.isActive() || teamsStorage.webAppStates.isActive()) {
+                            return true
+                        }
+                    } catch {
+                        return false
+                    }
                 }
             }
         }
         
         return false
+    }
+    
+    func isFileCurrent(url: URL) -> Bool {
+        guard let start = fileModificationDate(url: url) else { return false }
+        let timeToLive: TimeInterval = 60 * 60 * 24 // 60 seconds * 60 minutes * 24 hours
+        
+        return Date().timeIntervalSince(start) <= timeToLive
+    }
+    
+    func fileModificationDate(url: URL) -> Date? {
+        do {
+            let attr = try FileManager.default.attributesOfItem(atPath: url.path)
+            return attr[FileAttributeKey.modificationDate] as? Date
+        } catch {
+            return nil
+        }
     }
 }
