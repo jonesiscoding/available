@@ -479,6 +479,8 @@
 			<dict>
 				<key>POSTINSTALL_PATH</key>
 				<dict>
+					<key>PATH</key>
+					<string>/Users/aaronj/Developer/available/src/postinstall</string>
 					<key>PATH_TYPE</key>
 					<integer>0</integer>
 				</dict>
@@ -515,7 +517,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.7</string>
+				<string>1.7.1</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>

@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+[ ! -e "/usr/local/bin/available-cli" ] && ln -s /Applications/Available.app/Contents/Resources/available-cli /usr/local/bin/available-cli
+[ ! -e "/usr/local/bin/output-cli" ] && ln -s /Applications/Available.app/Contents/Resources/available-cli /usr/local/bin/output-cli
